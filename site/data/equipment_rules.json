@@ -1,0 +1,1461 @@
+{
+  "schema_version": "2026.03",
+  "generated_by": "pipeline/cubicle_RuleEngine.py",
+  "regulatory_deadlines": {
+    "pcb_low_conc_disposal_deadline": "2027-03-31",
+    "pcb_practical_sampling_deadline": "2026-10-31",
+    "pcb_law_reference": "ポリ塩化ビフェニル廃棄物の適正な処理の推進に関する特別措置法（PCB特措法）第10条・施行令（計画的処理完了期限：2027年3月31日）",
+    "pcb_penalty_summary": "改善命令違反時：3年以下の懲役若しくは1,000万円以下の罰金（又は併科）。2027年4月以降は環境省認定無害化処理施設での受入終了リスクあり。",
+    "asbestos_workplace_enforcement_date": "2026-01-01",
+    "asbestos_ban_threshold_year": 2006,
+    "asbestos_electronic_report_min_yen": 1000000,
+    "asbestos_law_reference": "改正大気汚染防止法・石綿障害予防規則（2026年1月1日施行：特定工作物・電気設備・空調設備の有資格者による事前調査完全義務化）",
+    "top_runner_2026_reference": "エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律（省エネ法）2026年度目標 第三次トップランナー変圧器基準（JIS C 4304 油入変圧器 / JIS C 4306 モールド変圧器）",
+    "co2_emission_factor_kg_per_kwh": 0.438
+  },
+  "manufacturers": {
+    "hitachi": {
+      "id": "hitachi",
+      "name_ja": "日立製作所（日立産機システム）",
+      "name_en": "Hitachi",
+      "supports_cubicle": true,
+      "supports_hvac": true,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1993,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分。低濃度PCB混入可能性は変圧器で1990年(平成2年)6月製造分まで、コンデンサで1990年12月製造分までがJEMA・メーカー公表の確認対象です。",
+      "aliases": [
+        "日立製作所",
+        "日立産機",
+        "日立",
+        "HITACHI",
+        "アモルファス日立"
+      ],
+      "model_prefixes": [
+        "SO-",
+        "STO-",
+        "HT-",
+        "SH-",
+        "RAS-",
+        "RPI-",
+        "RPB-"
+      ]
+    },
+    "mitsubishi": {
+      "id": "mitsubishi",
+      "name_ja": "三菱電機",
+      "name_en": "Mitsubishi Electric",
+      "supports_cubicle": true,
+      "supports_hvac": true,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1994,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分。低濃度PCB混入可能性は変圧器・リアクトルで1990年(平成2年)3月製造分まで、計器用変成器で1990年6月製造分まで（絶縁油交換歴がある場合は1994年以前も要採油確認）。",
+      "aliases": [
+        "三菱電機",
+        "三菱重工",
+        "三菱",
+        "MITSUBISHI",
+        "スリムER",
+        "パッケージエアコン三菱"
+      ],
+      "model_prefixes": [
+        "R-",
+        "ST-",
+        "TR-",
+        "PUZ-",
+        "PLZ-",
+        "PFAV-",
+        "PEZX-"
+      ]
+    },
+    "toshiba": {
+      "id": "toshiba",
+      "name_ja": "東芝（東芝産業機器システム / 旧東京芝浦電気）",
+      "name_en": "Toshiba",
+      "supports_cubicle": true,
+      "supports_hvac": true,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1993,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分（旧社名：東京芝浦電気銘板を含む）。低濃度PCB混入可能性は変圧器で1990年(平成2年)3月製造分までが要採油分析対象です。",
+      "aliases": [
+        "東京芝浦電気",
+        "芝浦製作所",
+        "東芝産業機器",
+        "東芝キヤリア",
+        "東芝",
+        "TOSHIBA"
+      ],
+      "model_prefixes": [
+        "TO-",
+        "T-",
+        "ik-",
+        "ROA-",
+        "RUXA-",
+        "AIC-"
+      ]
+    },
+    "fuji": {
+      "id": "fuji",
+      "name_ja": "富士電機（旧富士電機製造）",
+      "name_en": "Fuji Electric",
+      "supports_cubicle": true,
+      "supports_hvac": false,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1993,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分。低濃度PCB混入可能性は変圧器で1989年12月製造分まで、一部油入機器・計器用変成器を含め1990年製造分までが確認対象です。",
+      "aliases": [
+        "富士電機製造",
+        "富士電機システムズ",
+        "富士電機",
+        "富士",
+        "FUJI ELECTRIC",
+        "FUJI"
+      ],
+      "model_prefixes": [
+        "F-",
+        "FT-",
+        "FTR-",
+        "FMS-"
+      ]
+    },
+    "meidensha": {
+      "id": "meidensha",
+      "name_ja": "明電舎",
+      "name_en": "Meidensha",
+      "supports_cubicle": true,
+      "supports_hvac": false,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1993,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分。低濃度PCB混入可能性は油入変圧器・リアクトル等で1990年(平成2年)12月製造分までが採油分析確認対象です。",
+      "aliases": [
+        "明電舎",
+        "明電",
+        "MEIDENSHA",
+        "MEIDEN"
+      ],
+      "model_prefixes": [
+        "M-",
+        "MT-",
+        "B-",
+        "MOR-"
+      ]
+    },
+    "daihen": {
+      "id": "daihen",
+      "name_ja": "ダイヘン（旧大阪変圧器）",
+      "name_en": "Daihen",
+      "supports_cubicle": true,
+      "supports_hvac": false,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1991,
+      "oil_refill_caution_end_year": 1994,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分（旧社名：大阪変圧器銘板に多数該当）。低濃度PCB混入可能性は変圧器1990年11月〜一部油入機器1991年(平成3年)製造分まで確認対象ロットがあります。",
+      "aliases": [
+        "大阪変圧器",
+        "ダイヘン",
+        "DAIHEN",
+        "OSAKA TRANSFORMER",
+        "OTC"
+      ],
+      "model_prefixes": [
+        "PA-",
+        "PF-",
+        "SF-",
+        "U-",
+        "MTR-"
+      ]
+    },
+    "nissin": {
+      "id": "nissin",
+      "name_ja": "日新電機",
+      "name_en": "Nissin Electric",
+      "supports_cubicle": true,
+      "supports_hvac": false,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1994,
+      "oil_refill_caution_end_year": 1994,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分（進相コンデンサ等に多数）。低濃度PCB混入可能性は一部コンデンサ・計器用変成器・油入機器ロットで1994年(平成6年)3月製造分まで要確認対象が含まれます。",
+      "aliases": [
+        "日新電機",
+        "日新",
+        "NISSIN ELECTRIC",
+        "NISSIN"
+      ],
+      "model_prefixes": [
+        "NC-",
+        "NSC-",
+        "NT-",
+        "PV-",
+        "OF-"
+      ]
+    },
+    "aichi": {
+      "id": "aichi",
+      "name_ja": "愛知電機",
+      "name_en": "Aichi Electric",
+      "supports_cubicle": true,
+      "supports_hvac": false,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1993,
+      "pcb_window_detail_ja": "高濃度PCBは1972年以前製造分。低濃度PCB混入可能性は1990年(平成2年)11月製造分までの油入変圧器が確認対象です。",
+      "aliases": [
+        "愛知電機工作所",
+        "愛知電機",
+        "AICHI ELECTRIC",
+        "AICHI"
+      ],
+      "model_prefixes": [
+        "AT-",
+        "A-"
+      ]
+    },
+    "daikin": {
+      "id": "daikin",
+      "name_ja": "ダイキン工業",
+      "name_en": "Daikin Industries",
+      "supports_cubicle": false,
+      "supports_hvac": true,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1991,
+      "pcb_window_detail_ja": "業務用空調機本体はフロン排出抑制法（R22冷媒全廃・漏洩点検義務）が主対象ですが、1990年以前の旧型大型空調動力盤内の力率改善用コンデンサはPCB確認が必要です。",
+      "aliases": [
+        "ダイキン工業",
+        "ダイキン",
+        "DAIKIN",
+        "FIVE STAR ZEAS",
+        "Eco-ZEAS",
+        "スカイエア"
+      ],
+      "model_prefixes": [
+        "SZRC",
+        "SSRC",
+        "RXYP",
+        "RZP",
+        "FDTV",
+        "FVP",
+        "UC-"
+      ]
+    },
+    "panasonic": {
+      "id": "panasonic",
+      "name_ja": "パナソニック（旧松下電器産業・三洋電機）",
+      "name_en": "Panasonic",
+      "supports_cubicle": true,
+      "supports_hvac": true,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1990,
+      "oil_refill_caution_end_year": 1993,
+      "pcb_window_detail_ja": "旧松下電器産業・三洋電機銘板の進相コンデンサ・受変電機器（1990年以前製造）は低濃度PCB要確認、1972年以前は高濃度PCB対象です。",
+      "aliases": [
+        "松下電器産業",
+        "松下冷機",
+        "松下電工",
+        "三洋電機",
+        "ナショナル",
+        "パナソニック",
+        "PANASONIC",
+        "SANYO",
+        "NATIONAL"
+      ],
+      "model_prefixes": [
+        "PA-",
+        "CU-",
+        "CS-",
+        "SPW-"
+      ]
+    },
+    "other": {
+      "id": "other",
+      "name_ja": "その他国内メーカー・OEM・銘板不明",
+      "name_en": "Other / Unidentified",
+      "supports_cubicle": true,
+      "supports_hvac": true,
+      "high_conc_pcb_end_year": 1972,
+      "low_conc_pcb_end_year": 1994,
+      "oil_refill_caution_end_year": 1994,
+      "pcb_window_detail_ja": "メーカー不明またはOEM盤の場合、安全側の法令遵守基準として1972年以前を高濃度PCB疑い、1994年(平成6年)以前製造の油入機器すべてを低濃度PCB採油分析対象として判定します。",
+      "aliases": [
+        "北陸電機",
+        "中国電機",
+        "九州変圧器",
+        "指月電機",
+        "帝国コンデンサ",
+        "二井蓄電器",
+        "不明"
+      ],
+      "model_prefixes": []
+    }
+  },
+  "transformer_specs": {
+    "standard_capacities_kva": [
+      50,
+      75,
+      100,
+      150,
+      200,
+      300,
+      500,
+      750,
+      1000
+    ],
+    "hours_per_year": 8760,
+    "oil_jis_c_4304": {
+      "50": {
+        "era_1970_1980": {
+          "no_load_w": 245,
+          "load_w": 1180
+        },
+        "era_1981_1990": {
+          "no_load_w": 198,
+          "load_w": 1020
+        },
+        "era_1991_2005": {
+          "no_load_w": 162,
+          "load_w": 910
+        },
+        "era_2006_2013": {
+          "no_load_w": 115,
+          "load_w": 780
+        },
+        "era_2014_2025": {
+          "no_load_w": 96,
+          "load_w": 695
+        },
+        "target_2026_standard": {
+          "no_load_w": 78,
+          "load_w": 610
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 36,
+          "load_w": 625
+        }
+      },
+      "75": {
+        "era_1970_1980": {
+          "no_load_w": 330,
+          "load_w": 1590
+        },
+        "era_1981_1990": {
+          "no_load_w": 268,
+          "load_w": 1380
+        },
+        "era_1991_2005": {
+          "no_load_w": 220,
+          "load_w": 1230
+        },
+        "era_2006_2013": {
+          "no_load_w": 155,
+          "load_w": 1050
+        },
+        "era_2014_2025": {
+          "no_load_w": 128,
+          "load_w": 940
+        },
+        "target_2026_standard": {
+          "no_load_w": 104,
+          "load_w": 825
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 48,
+          "load_w": 845
+        }
+      },
+      "100": {
+        "era_1970_1980": {
+          "no_load_w": 415,
+          "load_w": 1980
+        },
+        "era_1981_1990": {
+          "no_load_w": 335,
+          "load_w": 1720
+        },
+        "era_1991_2005": {
+          "no_load_w": 275,
+          "load_w": 1530
+        },
+        "era_2006_2013": {
+          "no_load_w": 190,
+          "load_w": 1310
+        },
+        "era_2014_2025": {
+          "no_load_w": 158,
+          "load_w": 1170
+        },
+        "target_2026_standard": {
+          "no_load_w": 128,
+          "load_w": 1030
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 60,
+          "load_w": 1055
+        }
+      },
+      "150": {
+        "era_1970_1980": {
+          "no_load_w": 565,
+          "load_w": 2680
+        },
+        "era_1981_1990": {
+          "no_load_w": 460,
+          "load_w": 2320
+        },
+        "era_1991_2005": {
+          "no_load_w": 378,
+          "load_w": 2060
+        },
+        "era_2006_2013": {
+          "no_load_w": 260,
+          "load_w": 1770
+        },
+        "era_2014_2025": {
+          "no_load_w": 215,
+          "load_w": 1590
+        },
+        "target_2026_standard": {
+          "no_load_w": 174,
+          "load_w": 1395
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 82,
+          "load_w": 1430
+        }
+      },
+      "200": {
+        "era_1970_1980": {
+          "no_load_w": 705,
+          "load_w": 3320
+        },
+        "era_1981_1990": {
+          "no_load_w": 575,
+          "load_w": 2880
+        },
+        "era_1991_2005": {
+          "no_load_w": 470,
+          "load_w": 2560
+        },
+        "era_2006_2013": {
+          "no_load_w": 320,
+          "load_w": 2200
+        },
+        "era_2014_2025": {
+          "no_load_w": 265,
+          "load_w": 1975
+        },
+        "target_2026_standard": {
+          "no_load_w": 214,
+          "load_w": 1735
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 102,
+          "load_w": 1780
+        }
+      },
+      "300": {
+        "era_1970_1980": {
+          "no_load_w": 960,
+          "load_w": 4450
+        },
+        "era_1981_1990": {
+          "no_load_w": 780,
+          "load_w": 3850
+        },
+        "era_1991_2005": {
+          "no_load_w": 640,
+          "load_w": 3420
+        },
+        "era_2006_2013": {
+          "no_load_w": 430,
+          "load_w": 2980
+        },
+        "era_2014_2025": {
+          "no_load_w": 355,
+          "load_w": 2690
+        },
+        "target_2026_standard": {
+          "no_load_w": 285,
+          "load_w": 2360
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 135,
+          "load_w": 2420
+        }
+      },
+      "500": {
+        "era_1970_1980": {
+          "no_load_w": 1420,
+          "load_w": 6580
+        },
+        "era_1981_1990": {
+          "no_load_w": 1150,
+          "load_w": 5720
+        },
+        "era_1991_2005": {
+          "no_load_w": 945,
+          "load_w": 5080
+        },
+        "era_2006_2013": {
+          "no_load_w": 635,
+          "load_w": 4420
+        },
+        "era_2014_2025": {
+          "no_load_w": 525,
+          "load_w": 3990
+        },
+        "target_2026_standard": {
+          "no_load_w": 420,
+          "load_w": 3510
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 198,
+          "load_w": 3590
+        }
+      },
+      "750": {
+        "era_1970_1980": {
+          "no_load_w": 1920,
+          "load_w": 8950
+        },
+        "era_1981_1990": {
+          "no_load_w": 1560,
+          "load_w": 7780
+        },
+        "era_1991_2005": {
+          "no_load_w": 1280,
+          "load_w": 6920
+        },
+        "era_2006_2013": {
+          "no_load_w": 865,
+          "load_w": 6020
+        },
+        "era_2014_2025": {
+          "no_load_w": 715,
+          "load_w": 5440
+        },
+        "target_2026_standard": {
+          "no_load_w": 575,
+          "load_w": 4780
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 270,
+          "load_w": 4890
+        }
+      },
+      "1000": {
+        "era_1970_1980": {
+          "no_load_w": 2380,
+          "load_w": 11200
+        },
+        "era_1981_1990": {
+          "no_load_w": 1940,
+          "load_w": 9750
+        },
+        "era_1991_2005": {
+          "no_load_w": 1590,
+          "load_w": 8680
+        },
+        "era_2006_2013": {
+          "no_load_w": 1080,
+          "load_w": 7550
+        },
+        "era_2014_2025": {
+          "no_load_w": 895,
+          "load_w": 6820
+        },
+        "target_2026_standard": {
+          "no_load_w": 720,
+          "load_w": 5980
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 340,
+          "load_w": 6120
+        }
+      }
+    },
+    "mold_jis_c_4306": {
+      "50": {
+        "era_1970_1980": {
+          "no_load_w": 314,
+          "load_w": 1345
+        },
+        "era_1981_1990": {
+          "no_load_w": 253,
+          "load_w": 1163
+        },
+        "era_1991_2005": {
+          "no_load_w": 207,
+          "load_w": 1037
+        },
+        "era_2006_2013": {
+          "no_load_w": 147,
+          "load_w": 889
+        },
+        "era_2014_2025": {
+          "no_load_w": 123,
+          "load_w": 792
+        },
+        "target_2026_standard": {
+          "no_load_w": 100,
+          "load_w": 695
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 46,
+          "load_w": 712
+        }
+      },
+      "75": {
+        "era_1970_1980": {
+          "no_load_w": 422,
+          "load_w": 1813
+        },
+        "era_1981_1990": {
+          "no_load_w": 343,
+          "load_w": 1573
+        },
+        "era_1991_2005": {
+          "no_load_w": 282,
+          "load_w": 1402
+        },
+        "era_2006_2013": {
+          "no_load_w": 198,
+          "load_w": 1197
+        },
+        "era_2014_2025": {
+          "no_load_w": 164,
+          "load_w": 1072
+        },
+        "target_2026_standard": {
+          "no_load_w": 133,
+          "load_w": 940
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 61,
+          "load_w": 963
+        }
+      },
+      "100": {
+        "era_1970_1980": {
+          "no_load_w": 531,
+          "load_w": 2257
+        },
+        "era_1981_1990": {
+          "no_load_w": 429,
+          "load_w": 1961
+        },
+        "era_1991_2005": {
+          "no_load_w": 352,
+          "load_w": 1744
+        },
+        "era_2006_2013": {
+          "no_load_w": 243,
+          "load_w": 1493
+        },
+        "era_2014_2025": {
+          "no_load_w": 202,
+          "load_w": 1334
+        },
+        "target_2026_standard": {
+          "no_load_w": 164,
+          "load_w": 1174
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 77,
+          "load_w": 1203
+        }
+      },
+      "150": {
+        "era_1970_1980": {
+          "no_load_w": 723,
+          "load_w": 3055
+        },
+        "era_1981_1990": {
+          "no_load_w": 589,
+          "load_w": 2645
+        },
+        "era_1991_2005": {
+          "no_load_w": 484,
+          "load_w": 2348
+        },
+        "era_2006_2013": {
+          "no_load_w": 333,
+          "load_w": 2018
+        },
+        "era_2014_2025": {
+          "no_load_w": 275,
+          "load_w": 1813
+        },
+        "target_2026_standard": {
+          "no_load_w": 223,
+          "load_w": 1590
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 105,
+          "load_w": 1630
+        }
+      },
+      "200": {
+        "era_1970_1980": {
+          "no_load_w": 902,
+          "load_w": 3785
+        },
+        "era_1981_1990": {
+          "no_load_w": 736,
+          "load_w": 3283
+        },
+        "era_1991_2005": {
+          "no_load_w": 602,
+          "load_w": 2918
+        },
+        "era_2006_2013": {
+          "no_load_w": 410,
+          "load_w": 2508
+        },
+        "era_2014_2025": {
+          "no_load_w": 339,
+          "load_w": 2252
+        },
+        "target_2026_standard": {
+          "no_load_w": 274,
+          "load_w": 1978
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 131,
+          "load_w": 2029
+        }
+      },
+      "300": {
+        "era_1970_1980": {
+          "no_load_w": 1229,
+          "load_w": 5073
+        },
+        "era_1981_1990": {
+          "no_load_w": 998,
+          "load_w": 4389
+        },
+        "era_1991_2005": {
+          "no_load_w": 819,
+          "load_w": 3899
+        },
+        "era_2006_2013": {
+          "no_load_w": 550,
+          "load_w": 3397
+        },
+        "era_2014_2025": {
+          "no_load_w": 454,
+          "load_w": 3067
+        },
+        "target_2026_standard": {
+          "no_load_w": 365,
+          "load_w": 2690
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 173,
+          "load_w": 2759
+        }
+      },
+      "500": {
+        "era_1970_1980": {
+          "no_load_w": 1818,
+          "load_w": 7501
+        },
+        "era_1981_1990": {
+          "no_load_w": 1472,
+          "load_w": 6521
+        },
+        "era_1991_2005": {
+          "no_load_w": 1210,
+          "load_w": 5791
+        },
+        "era_2006_2013": {
+          "no_load_w": 813,
+          "load_w": 5039
+        },
+        "era_2014_2025": {
+          "no_load_w": 672,
+          "load_w": 4549
+        },
+        "target_2026_standard": {
+          "no_load_w": 538,
+          "load_w": 4001
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 253,
+          "load_w": 4093
+        }
+      },
+      "750": {
+        "era_1970_1980": {
+          "no_load_w": 2458,
+          "load_w": 10203
+        },
+        "era_1981_1990": {
+          "no_load_w": 1997,
+          "load_w": 8869
+        },
+        "era_1991_2005": {
+          "no_load_w": 1638,
+          "load_w": 7889
+        },
+        "era_2006_2013": {
+          "no_load_w": 1107,
+          "load_w": 6863
+        },
+        "era_2014_2025": {
+          "no_load_w": 915,
+          "load_w": 6202
+        },
+        "target_2026_standard": {
+          "no_load_w": 736,
+          "load_w": 5449
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 346,
+          "load_w": 5575
+        }
+      },
+      "1000": {
+        "era_1970_1980": {
+          "no_load_w": 3046,
+          "load_w": 12768
+        },
+        "era_1981_1990": {
+          "no_load_w": 2483,
+          "load_w": 11115
+        },
+        "era_1991_2005": {
+          "no_load_w": 2035,
+          "load_w": 9895
+        },
+        "era_2006_2013": {
+          "no_load_w": 1382,
+          "load_w": 8607
+        },
+        "era_2014_2025": {
+          "no_load_w": 1146,
+          "load_w": 7775
+        },
+        "target_2026_standard": {
+          "no_load_w": 922,
+          "load_w": 6817
+        },
+        "target_2026_amorphous": {
+          "no_load_w": 435,
+          "load_w": 6977
+        }
+      }
+    },
+    "capex_by_kva": {
+      "50": {
+        "equipment_yen": 1650000,
+        "install_yen": 780000,
+        "pcb_disposal_low_yen": 420000,
+        "pcb_disposal_high_yen": 1150000,
+        "asbestos_survey_yen": 95000,
+        "legacy_annual_maint_penalty_yen": 65000
+      },
+      "75": {
+        "equipment_yen": 1980000,
+        "install_yen": 860000,
+        "pcb_disposal_low_yen": 460000,
+        "pcb_disposal_high_yen": 1280000,
+        "asbestos_survey_yen": 100000,
+        "legacy_annual_maint_penalty_yen": 78000
+      },
+      "100": {
+        "equipment_yen": 2350000,
+        "install_yen": 950000,
+        "pcb_disposal_low_yen": 520000,
+        "pcb_disposal_high_yen": 1450000,
+        "asbestos_survey_yen": 110000,
+        "legacy_annual_maint_penalty_yen": 92000
+      },
+      "150": {
+        "equipment_yen": 2950000,
+        "install_yen": 1150000,
+        "pcb_disposal_low_yen": 610000,
+        "pcb_disposal_high_yen": 1720000,
+        "asbestos_survey_yen": 120000,
+        "legacy_annual_maint_penalty_yen": 115000
+      },
+      "200": {
+        "equipment_yen": 3550000,
+        "install_yen": 1320000,
+        "pcb_disposal_low_yen": 690000,
+        "pcb_disposal_high_yen": 1980000,
+        "asbestos_survey_yen": 130000,
+        "legacy_annual_maint_penalty_yen": 140000
+      },
+      "300": {
+        "equipment_yen": 4650000,
+        "install_yen": 1650000,
+        "pcb_disposal_low_yen": 850000,
+        "pcb_disposal_high_yen": 2450000,
+        "asbestos_survey_yen": 145000,
+        "legacy_annual_maint_penalty_yen": 185000
+      },
+      "500": {
+        "equipment_yen": 6900000,
+        "install_yen": 2350000,
+        "pcb_disposal_low_yen": 1180000,
+        "pcb_disposal_high_yen": 3400000,
+        "asbestos_survey_yen": 165000,
+        "legacy_annual_maint_penalty_yen": 270000
+      },
+      "750": {
+        "equipment_yen": 9600000,
+        "install_yen": 3150000,
+        "pcb_disposal_low_yen": 1550000,
+        "pcb_disposal_high_yen": 4350000,
+        "asbestos_survey_yen": 185000,
+        "legacy_annual_maint_penalty_yen": 360000
+      },
+      "1000": {
+        "equipment_yen": 12400000,
+        "install_yen": 3950000,
+        "pcb_disposal_low_yen": 1920000,
+        "pcb_disposal_high_yen": 5200000,
+        "asbestos_survey_yen": 210000,
+        "legacy_annual_maint_penalty_yen": 460000
+      }
+    },
+    "era_labels": {
+      "era_1970_1980": "1970〜1980年製（初期JIS珪素鋼板世代）",
+      "era_1981_1990": "1981〜1990年製（旧JIS標準・低濃度PCB要確認世代）",
+      "era_1991_2005": "1991〜2005年製（トップランナー導入前世代）",
+      "era_2006_2013": "2006〜2013年製（第一次トップランナー基準世代）",
+      "era_2014_2025": "2014〜2025年製（第二次トップランナー基準世代）",
+      "target_2026_standard": "2026年度 第三次トップランナー基準適合変圧器",
+      "target_2026_amorphous": "2026年度 第三次トップランナー 超高効率アモルファス変圧器"
+    }
+  },
+  "hvac_specs": {
+    "standard_capacities_hp": [
+      3,
+      5,
+      8,
+      10,
+      15,
+      20,
+      30,
+      40,
+      50
+    ],
+    "annual_full_load_equiv_hours_base": 2600,
+    "specs_by_hp": {
+      "3": {
+        "cooling_kw": 8.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.65,
+          "era_1995_2003": 3.3,
+          "era_2004_2010": 4.25,
+          "era_2011_2017": 4.95,
+          "era_2018_2025": 5.65,
+          "target_2026_top_runner": 6.45
+        },
+        "equipment_yen": 540000,
+        "install_yen": 260000,
+        "freon_recovery_yen": 48000,
+        "asbestos_survey_yen": 65000,
+        "legacy_annual_maint_penalty_yen": 32000
+      },
+      "5": {
+        "cooling_kw": 14.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.6,
+          "era_1995_2003": 3.22,
+          "era_2004_2010": 4.15,
+          "era_2011_2017": 4.8,
+          "era_2018_2025": 5.45,
+          "target_2026_top_runner": 6.2
+        },
+        "equipment_yen": 760000,
+        "install_yen": 340000,
+        "freon_recovery_yen": 58000,
+        "asbestos_survey_yen": 72000,
+        "legacy_annual_maint_penalty_yen": 45000
+      },
+      "8": {
+        "cooling_kw": 22.4,
+        "apf_by_era": {
+          "era_1970_1994": 2.52,
+          "era_1995_2003": 3.12,
+          "era_2004_2010": 4.02,
+          "era_2011_2017": 4.65,
+          "era_2018_2025": 5.2,
+          "target_2026_top_runner": 5.88
+        },
+        "equipment_yen": 1120000,
+        "install_yen": 460000,
+        "freon_recovery_yen": 75000,
+        "asbestos_survey_yen": 85000,
+        "legacy_annual_maint_penalty_yen": 68000
+      },
+      "10": {
+        "cooling_kw": 28.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.48,
+          "era_1995_2003": 3.08,
+          "era_2004_2010": 3.95,
+          "era_2011_2017": 4.55,
+          "era_2018_2025": 5.08,
+          "target_2026_top_runner": 5.72
+        },
+        "equipment_yen": 1380000,
+        "install_yen": 550000,
+        "freon_recovery_yen": 88000,
+        "asbestos_survey_yen": 92000,
+        "legacy_annual_maint_penalty_yen": 85000
+      },
+      "15": {
+        "cooling_kw": 42.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.42,
+          "era_1995_2003": 3.0,
+          "era_2004_2010": 3.85,
+          "era_2011_2017": 4.42,
+          "era_2018_2025": 4.92,
+          "target_2026_top_runner": 5.5
+        },
+        "equipment_yen": 2050000,
+        "install_yen": 820000,
+        "freon_recovery_yen": 125000,
+        "asbestos_survey_yen": 108000,
+        "legacy_annual_maint_penalty_yen": 120000
+      },
+      "20": {
+        "cooling_kw": 56.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.38,
+          "era_1995_2003": 2.95,
+          "era_2004_2010": 3.78,
+          "era_2011_2017": 4.32,
+          "era_2018_2025": 4.8,
+          "target_2026_top_runner": 5.35
+        },
+        "equipment_yen": 2680000,
+        "install_yen": 1080000,
+        "freon_recovery_yen": 160000,
+        "asbestos_survey_yen": 120000,
+        "legacy_annual_maint_penalty_yen": 155000
+      },
+      "30": {
+        "cooling_kw": 85.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.32,
+          "era_1995_2003": 2.88,
+          "era_2004_2010": 3.68,
+          "era_2011_2017": 4.2,
+          "era_2018_2025": 4.68,
+          "target_2026_top_runner": 5.18
+        },
+        "equipment_yen": 3950000,
+        "install_yen": 1580000,
+        "freon_recovery_yen": 220000,
+        "asbestos_survey_yen": 140000,
+        "legacy_annual_maint_penalty_yen": 225000
+      },
+      "40": {
+        "cooling_kw": 112.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.28,
+          "era_1995_2003": 2.82,
+          "era_2004_2010": 3.6,
+          "era_2011_2017": 4.12,
+          "era_2018_2025": 4.58,
+          "target_2026_top_runner": 5.05
+        },
+        "equipment_yen": 5200000,
+        "install_yen": 2050000,
+        "freon_recovery_yen": 280000,
+        "asbestos_survey_yen": 155000,
+        "legacy_annual_maint_penalty_yen": 290000
+      },
+      "50": {
+        "cooling_kw": 140.0,
+        "apf_by_era": {
+          "era_1970_1994": 2.25,
+          "era_1995_2003": 2.78,
+          "era_2004_2010": 3.55,
+          "era_2011_2017": 4.05,
+          "era_2018_2025": 4.5,
+          "target_2026_top_runner": 4.95
+        },
+        "equipment_yen": 6450000,
+        "install_yen": 2520000,
+        "freon_recovery_yen": 340000,
+        "asbestos_survey_yen": 175000,
+        "legacy_annual_maint_penalty_yen": 355000
+      }
+    },
+    "era_labels": {
+      "era_1970_1994": "1970〜1994年製（R22定速機・動力盤PCB注意世代）",
+      "era_1995_2003": "1995〜2003年製（R22/R407C旧インバータ・石綿調査世代）",
+      "era_2004_2010": "2004〜2010年製（R410A初期インバータ世代）",
+      "era_2011_2017": "2011〜2017年製（R410A中期インバータ世代）",
+      "era_2018_2025": "2018〜2025年製（R32現行インバータ世代）",
+      "target_2026_top_runner": "2026年最新 R32超高効率インバータ空調機"
+    }
+  },
+  "subsidy_rules": {
+    "national_sii": {
+      "program_name": "経済産業省（SII）省エネルギー投資促進支援事業（III 指定設備導入事業：高効率変圧器・業務用エアコン）",
+      "equipment_subsidy_rate": 0.333333,
+      "factory_wide_sme_alt_rate": 0.5,
+      "max_combined_subsidy_ratio": 0.66,
+      "tax_incentive_note": "中小企業経営強化税制（即時償却または取得価額10%税額控除※資本金3,000万円以下）との活用検討も可能（※国庫補助金との圧縮記帳ルールは顧問税理士確認）。"
+    },
+    "prefectures": [
+      {
+        "code": "01",
+        "name": "北海道",
+        "program_name": "北海道中小企業省エネ・脱炭素設備導入支援",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "02",
+        "name": "青森県",
+        "program_name": "あおもり脱炭素経営促進設備導入補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1000000
+      },
+      {
+        "code": "03",
+        "name": "岩手県",
+        "program_name": "岩手県事業者向け省エネルギー設備更新支援",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1000000
+      },
+      {
+        "code": "04",
+        "name": "宮城県",
+        "program_name": "みやぎ二酸化炭素排出削減設備導入補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 2000000
+      },
+      {
+        "code": "05",
+        "name": "秋田県",
+        "program_name": "秋田県脱炭素社会推進設備投資支援事業",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "06",
+        "name": "山形県",
+        "program_name": "山形県中小企業省エネ・再エネ設備導入補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "07",
+        "name": "福島県",
+        "program_name": "福島県中小企業等省エネ設備更新補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 1800000
+      },
+      {
+        "code": "08",
+        "name": "茨城県",
+        "program_name": "茨城県中小企業脱炭素化促進設備導入補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "09",
+        "name": "栃木県",
+        "program_name": "とちぎ省エネ設備導入促進事業補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "10",
+        "name": "群馬県",
+        "program_name": "群馬県グリーンイノベーション省エネ投資支援",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "11",
+        "name": "埼玉県",
+        "program_name": "埼玉県中小企業CO2排出削減設備導入補助金",
+        "pref_addon_rate_sme": 0.15,
+        "pref_cap_yen": 2500000
+      },
+      {
+        "code": "12",
+        "name": "千葉県",
+        "program_name": "千葉県脱炭素化促進設備導入支援補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 2000000
+      },
+      {
+        "code": "13",
+        "name": "東京都",
+        "program_name": "クール・ネット東京 省エネ・非フロン機器導入助成",
+        "pref_addon_rate_sme": 0.22,
+        "pref_cap_yen": 5000000
+      },
+      {
+        "code": "14",
+        "name": "神奈川県",
+        "program_name": "神奈川県中小企業エネルギー効率化・脱炭素助成",
+        "pref_addon_rate_sme": 0.15,
+        "pref_cap_yen": 3000000
+      },
+      {
+        "code": "15",
+        "name": "新潟県",
+        "program_name": "新潟県事業者向け脱炭素設備投資支援補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "16",
+        "name": "富山県",
+        "program_name": "富山県中小企業省エネ設備更新応援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "17",
+        "name": "石川県",
+        "program_name": "いしかわカーボンニュートラル設備導入補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "18",
+        "name": "福井県",
+        "program_name": "福井県工場・事業場省エネ設備更新補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "19",
+        "name": "山梨県",
+        "program_name": "やまなし脱炭素経営設備導入支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "20",
+        "name": "長野県",
+        "program_name": "長野県中小企業ゼロカーボン設備投資補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 1800000
+      },
+      {
+        "code": "21",
+        "name": "岐阜県",
+        "program_name": "岐阜県省エネ・脱炭素設備更新促進補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "22",
+        "name": "静岡県",
+        "program_name": "静岡県中小企業脱炭素経営設備導入補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 2000000
+      },
+      {
+        "code": "23",
+        "name": "愛知県",
+        "program_name": "あいち脱炭素経営・高効率設備更新促進補助金",
+        "pref_addon_rate_sme": 0.15,
+        "pref_cap_yen": 3000000
+      },
+      {
+        "code": "24",
+        "name": "三重県",
+        "program_name": "三重県事業者省エネルギー投資支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "25",
+        "name": "滋賀県",
+        "program_name": "しがCO2ネットゼロ産業設備導入補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 1800000
+      },
+      {
+        "code": "26",
+        "name": "京都府",
+        "program_name": "京都府中小企業省エネ・脱炭素推進補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 2000000
+      },
+      {
+        "code": "27",
+        "name": "大阪府",
+        "program_name": "大阪府中小事業者脱炭素化・高効率設備導入補助",
+        "pref_addon_rate_sme": 0.15,
+        "pref_cap_yen": 3000000
+      },
+      {
+        "code": "28",
+        "name": "兵庫県",
+        "program_name": "ひょうご産業脱炭素化設備導入支援事業",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 2200000
+      },
+      {
+        "code": "29",
+        "name": "奈良県",
+        "program_name": "奈良県中小企業省エネルギー設備導入補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "30",
+        "name": "和歌山県",
+        "program_name": "和歌山県脱炭素経営促進設備更新補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "31",
+        "name": "鳥取県",
+        "program_name": "鳥取県省エネ・脱炭素設備導入支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1000000
+      },
+      {
+        "code": "32",
+        "name": "島根県",
+        "program_name": "島根県中小企業エネルギーコスト削減設備補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1000000
+      },
+      {
+        "code": "33",
+        "name": "岡山県",
+        "program_name": "おかやま事業者省エネ設備更新支援補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 1800000
+      },
+      {
+        "code": "34",
+        "name": "広島県",
+        "program_name": "広島県カーボンニュートラル設備投資促進補助",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 2000000
+      },
+      {
+        "code": "35",
+        "name": "山口県",
+        "program_name": "やまぐち産業脱炭素化設備導入支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "36",
+        "name": "徳島県",
+        "program_name": "徳島県中小企業GX・省エネ設備更新補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "37",
+        "name": "香川県",
+        "program_name": "かがわ省エネ・脱炭素設備導入促進補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "38",
+        "name": "愛媛県",
+        "program_name": "愛媛県中小企業省エネルギー設備更新補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "39",
+        "name": "高知県",
+        "program_name": "高知県脱炭素経営推進設備導入支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1000000
+      },
+      {
+        "code": "40",
+        "name": "福岡県",
+        "program_name": "福岡県中小企業省エネ・脱炭素設備投資補助金",
+        "pref_addon_rate_sme": 0.14,
+        "pref_cap_yen": 2500000
+      },
+      {
+        "code": "41",
+        "name": "佐賀県",
+        "program_name": "佐賀県事業者向け省エネルギー設備導入補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "42",
+        "name": "長崎県",
+        "program_name": "ながさきゼロカーボン設備投資支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "43",
+        "name": "熊本県",
+        "program_name": "熊本県中小企業省エネ設備更新促進補助金",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 1800000
+      },
+      {
+        "code": "44",
+        "name": "大分県",
+        "program_name": "大分県産業脱炭素・高効率設備導入補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1500000
+      },
+      {
+        "code": "45",
+        "name": "宮崎県",
+        "program_name": "宮崎県中小企業省エネ・再エネ設備導入補助",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "46",
+        "name": "鹿児島県",
+        "program_name": "かごしま脱炭素経営設備更新支援補助金",
+        "pref_addon_rate_sme": 0.1,
+        "pref_cap_yen": 1200000
+      },
+      {
+        "code": "47",
+        "name": "沖縄県",
+        "program_name": "沖縄県事業者省エネルギー設備導入支援事業",
+        "pref_addon_rate_sme": 0.12,
+        "pref_cap_yen": 1500000
+      }
+    ]
+  },
+  "sample_nameplates": [
+    {
+      "id": "sample_cubicle_1987",
+      "label": "サンプル①：1987年製 三菱電機 300kVA 油入変圧器",
+      "raw_text": "三相変圧器 銘板\n形式 R-300A  定格容量 300 kVA\n一次電圧 6600V  二次電圧 210V  周波数 50Hz\n冷却方式 油入自冷式 (JIS C 4304)  絶縁油量 215L\n製造年月 昭和62年8月  株式会社三菱電機 名古屋製作所"
+    },
+    {
+      "id": "sample_cubicle_1992_nissin",
+      "label": "サンプル②：1992年製 日新電機 500kVA 高圧受電盤",
+      "raw_text": "高圧受変電設備 キュービクル式\n主変圧器容量 500KVA 三相3線 6.6kV\n力率改善用高圧進相コンデンサ内蔵 油入式\n型式 NC-500H  平成4年11月製造\n日新電機株式会社 京都工場"
+    },
+    {
+      "id": "sample_hvac_1999_daikin",
+      "label": "サンプル③：1999年製 ダイキン 20馬力 R22業務用空調",
+      "raw_text": "空冷ヒートポンプ式パッケージエアコン 室外ユニット\n機種名 RXYP560A (20馬力相当 / 冷房能力 56.0kW)\n冷媒 R22 充填量 14.5kg  電源 三相200V\n1999年製  ダイキン工業株式会社"
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F0ZLS15LNQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F0ZLS15LNQ');
+    document.addEventListener('click', function(e) {
+      var el = e.target && e.target.closest ? e.target.closest('a, button') : null;
+      if (!el || typeof gtag !== 'function') return;
+      var label = (el.textContent || '').trim().slice(0, 60);
+      var href = el.getAttribute('href') || '';
+      if (el.id || (href && href.indexOf('http') === 0)) {
+        gtag('event', 'cta_engagement', {
+          element_id: el.id || 'link',
+          element_text: label,
+          link_url: href,
+          page_path: location.pathname
+        });
+      }
+    });
+  </script>
+  <title>キュービクルPCB・省エネ補助金試算｜高圧受変電・業務用空調</title>
+  <meta name="description" content="高圧受変電設備（キュービクル・変圧器）と業務用空調の製造年・メーカー・容量から、2027年PCB期限・石綿事前調査・省エネ補助金と投資回収年数を一括試算し、社内稟議用A4レポートを出力します。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- シンプルな白背景ナビゲーションバー（SmartHR / freee調） -->
+  <header class="site-navbar no-print">
+    <div class="container navbar-inner">
+      <div class="brand-group">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-name">設備更新・補助金シミュレーター</span>
+      </div>
+      <div class="navbar-actions">
+        <button type="button" id="btn-copy-ringi" class="btn btn-outline btn-sm">
+          <span>稟議テキストをコピー</span>
+        </button>
+        <button type="button" id="btn-print-pdf" class="btn btn-primary btn-sm">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+            <rect x="6" y="14" width="12" height="7" />
+          </svg>
+          <span>社内稟議用PDF（A4印刷）</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 印刷専用：社内稟議・役員説明レポート ヘッダー -->
+  <section class="print-only ringi-print-header" aria-hidden="true">
+    <div class="ringi-top-row">
+      <div class="ringi-meta">
+        <div class="ringi-doc-type">社内稟議添付資料（設備更新・法令対応・投資採算試算書）</div>
+        <h1 class="ringi-title">受変電・業務用空調設備 法令判定および省エネ補助金活用 試算報告書</h1>
+        <div class="ringi-info-line">
+          <span>試算日：<strong id="print-date-str">----年--月--日</strong></span>
+          <span>対象拠点：<strong id="print-facility-name">自社工場・事業場</strong></span>
+          <span>起案部署：<strong id="print-dept-name">総務・施設管理担当</strong></span>
+        </div>
+      </div>
+      <table class="ringi-stamp-box" aria-label="決裁印欄">
+        <thead>
+          <tr>
+            <th>役員決裁</th>
+            <th>部門長</th>
+            <th>経理・財務</th>
+            <th>起案担当</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ファーストビュー：短い見出し＋1文説明の直下にすぐシミュレーター本体を配置 -->
+  <main class="container page-main">
+    <div class="page-intro no-print">
+      <h1 class="page-title">キュービクルPCB・省エネ補助金試算</h1>
+      <p class="page-subtitle">2027年PCB期限・石綿調査義務・補助金控除後の回収年数を30秒で一括判定します。</p>
+    </div>
+
+    <div class="workspace-grid">
+      <!-- 左カラム：すぐ触れる設備条件入力フォーム -->
+      <aside class="input-panel no-print" aria-label="設備条件入力">
+        <form id="sim-form" class="card form-card" onsubmit="return false;">
+          <!-- 任意：銘板テキスト自動読取（折りたたみでノイズ最小化） -->
+          <details class="ocr-disclosure">
+            <summary class="ocr-summary">銘板テキスト貼り付けで自動入力する（任意）</summary>
+            <div class="ocr-body">
+              <p class="helper-text">
+                スマホで読み取った銘板文字（昭和・平成表記や旧社名「東京芝浦電気」「大阪変圧器」等）から自動反映します。
+              </p>
+              <div class="sample-btn-row" id="sample-buttons-container"></div>
+              <textarea
+                id="nameplate-input"
+                class="nameplate-textarea"
+                rows="3"
+                aria-label="銘板読取テキスト入力欄"
+              ></textarea>
+              <div class="ocr-action-row">
+                <button type="button" id="btn-parse-nameplate" class="btn btn-primary btn-sm">
+                  テキストから自動反映
+                </button>
+                <button type="button" id="btn-clear-nameplate" class="btn btn-ghost btn-sm">クリア</button>
+              </div>
+              <div id="ocr-parse-feedback" class="ocr-feedback hidden" role="status" aria-live="polite"></div>
+            </div>
+          </details>
+
+          <!-- 1. 対象設備種別 -->
+          <div class="field-group">
+            <label class="field-label">対象設備</label>
+            <div class="equip-toggle-grid" role="radiogroup" aria-label="対象設備種別">
+              <button type="button" id="tab-cubicle" class="equip-tab active" data-equip="cubicle" aria-pressed="true">
+                高圧キュービクル・変圧器
+              </button>
+              <button type="button" id="tab-hvac" class="equip-tab" data-equip="hvac" aria-pressed="false">
+                業務用パッケージ空調
+              </button>
+            </div>
+            <input type="hidden" id="equipment-type" value="cubicle" />
+          </div>
+
+          <!-- 2. メーカー -->
+          <div class="field-group">
+            <label for="manufacturer-select" class="field-label">メーカー</label>
+            <select id="manufacturer-select" class="form-control"></select>
+          </div>
+
+          <!-- 3. 製造年 -->
+          <div class="field-group">
+            <div class="label-row">
+              <label for="manufacturing-year" class="field-label">製造年</label>
+              <span id="wareki-helper" class="wareki-text">昭和62年 ／ 経年39年</span>
+            </div>
+            <div class="slider-with-input">
+              <input type="range" id="manufacturing-year-range" min="1970" max="2020" step="1" value="1987" />
+              <input type="number" id="manufacturing-year" class="form-control num-input-sm" min="1970" max="2025" value="1987" />
+            </div>
+            <div class="range-ticks">
+              <span>1970</span>
+              <span>1989 (H元)</span>
+              <span>2006 (石綿禁止)</span>
+              <span>2020</span>
+            </div>
+          </div>
+
+          <!-- 4. 容量・台数 -->
+          <div class="field-row-2col">
+            <div class="field-group">
+              <label for="capacity-select" class="field-label" id="capacity-label">定格容量 (kVA)</label>
+              <select id="capacity-select" class="form-control"></select>
+            </div>
+            <div class="field-group">
+              <label for="unit-count" class="field-label">台数</label>
+              <input type="number" id="unit-count" class="form-control num-input-sm" min="1" max="20" value="1" />
+            </div>
+          </div>
+
+          <!-- キュービクル専用オプション（フラット背景グループ・枠線入れ子なし） -->
+          <div id="cubicle-only-options" class="flat-group">
+            <div class="field-group">
+              <label for="insulation-type" class="field-label">現有変圧器の方式</label>
+              <select id="insulation-type" class="form-control">
+                <option value="oil">油入変圧器（JIS C 4304）</option>
+                <option value="mold">モールド変圧器（JIS C 4306・乾式）</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="upgrade-spec" class="field-label">更新後の2026基準機種</label>
+              <select id="upgrade-spec" class="form-control">
+                <option value="amorphous">超高効率アモルファス変圧器（推奨）</option>
+                <option value="standard">2026トップランナー標準変圧器</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 5. 平均負荷率 -->
+          <div class="field-group">
+            <div class="label-row">
+              <label for="load-factor" class="field-label">平均負荷率 (%)</label>
+              <div class="preset-links">
+                <button type="button" class="preset-chip" data-load="30">倉庫 30%</button>
+                <button type="button" class="preset-chip" data-load="45">工場 45%</button>
+                <button type="button" class="preset-chip" data-load="65">連続 65%</button>
+              </div>
+            </div>
+            <div class="slider-with-input">
+              <input type="range" id="load-factor-range" min="15" max="95" step="5" value="45" />
+              <input type="number" id="load-factor" class="form-control num-input-sm" min="10" max="100" value="45" />
+            </div>
+          </div>
+
+          <!-- 6. 電力単価 -->
+          <div class="field-group">
+            <label for="elec-rate" class="field-label">電力単価（円/kWh）</label>
+            <input type="number" id="elec-rate" class="form-control num-input-sm" min="12" max="60" step="0.5" value="27.0" />
+          </div>
+
+          <!-- 7. 都道府県・企業規模 -->
+          <div class="field-row-2col">
+            <div class="field-group">
+              <label for="prefecture-select" class="field-label">都道府県</label>
+              <select id="prefecture-select" class="form-control"></select>
+            </div>
+            <div class="field-group">
+              <label for="sme-status" class="field-label">企業規模</label>
+              <select id="sme-status" class="form-control">
+                <option value="sme">中小企業</option>
+                <option value="large">大企業</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 任意：稟議書印字設定 -->
+          <details class="ringi-meta-details">
+            <summary>稟議書PDFの拠点名・部署名を変更する（任意）</summary>
+            <div class="details-body">
+              <div class="field-group">
+                <label for="facility-name-input" class="field-label">拠点・工場名</label>
+                <input type="text" id="facility-name-input" class="form-control" value="第一製造工場（受変電・空調設備）" />
+              </div>
+              <div class="field-group">
+                <label for="dept-name-input" class="field-label">起案部署名</label>
+                <input type="text" id="dept-name-input" class="form-control" value="総務部 施設管理課" />
+              </div>
+            </div>
+          </details>
+        </form>
+      </aside>
+
+      <!-- 右カラム：すっきり整理された判定・損益結果エリア -->
+      <section class="results-panel" aria-label="診断・試算結果">
+        <!-- 印刷専用：前提条件バー -->
+        <div class="print-only print-condition-summary" id="print-condition-bar"></div>
+
+        <!-- 現在の試算対象ラベル（静かな1行表示） -->
+        <div class="sim-context-line no-print">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="active-sim-title">三菱電機 1987年製 300kVA（東京都・中小企業）の試算結果</span>
+        </div>
+
+        <!-- 1. 法令リスク判定（2カラムクリーンカード） -->
+        <div class="risk-cards-grid">
+          <article id="card-pcb" class="card status-card severity-high">
+            <div class="status-card-top">
+              <span class="law-tag">PCB特別措置法（2027年3月31日期限）</span>
+              <span id="pcb-remaining-chip" class="urgency-chip">残り --- 日</span>
+            </div>
+            <h2 id="pcb-badge-title" class="status-card-heading">判定中...</h2>
+            <p id="pcb-summary-text" class="status-card-desc"></p>
+            <p class="law-footnote" id="pcb-penalty-note"></p>
+          </article>
+
+          <article id="card-asbestos" class="card status-card severity-high">
+            <div class="status-card-top">
+              <span class="law-tag">工作物石綿事前調査（2026年1月義務化）</span>
+              <span id="asbestos-report-chip" class="urgency-chip">電子報告対象</span>
+            </div>
+            <h2 id="asbestos-badge-title" class="status-card-heading">判定中...</h2>
+            <p id="asbestos-summary-text" class="status-card-desc"></p>
+            <p class="law-footnote">対象部位：フランジガスケット・耐火パテ・盤内絶縁材・配管保温材・塗膜</p>
+          </article>
+        </div>
+
+        <!-- 2. 主要試算サマリー（4指標・余白重視のクリーンカード） -->
+        <div class="kpi-grid">
+          <div class="card kpi-card">
+            <div class="kpi-label">年間コスト削減額</div>
+            <div class="kpi-value text-accent" id="kpi-annual-saving">¥0</div>
+            <div class="kpi-sub" id="kpi-kwh-saving">削減電力量 0 kWh</div>
+          </div>
+          <div class="card kpi-card">
+            <div class="kpi-label">想定補助金（国＋自治体）</div>
+            <div class="kpi-value text-success" id="kpi-total-subsidy">¥0</div>
+            <div class="kpi-sub" id="kpi-subsidy-breakdown">経産省SII 1/3補助ほか</div>
+          </div>
+          <div class="card kpi-card">
+            <div class="kpi-label">実質自己負担額</div>
+            <div class="kpi-value" id="kpi-net-capex">¥0</div>
+            <div class="kpi-sub" id="kpi-gross-capex">総事業費 ¥0</div>
+          </div>
+          <div class="card kpi-card">
+            <div class="kpi-label">実質投資回収年数</div>
+            <div class="kpi-value" id="kpi-payback-years">0.0年</div>
+            <div class="kpi-sub" id="kpi-10yr-net-advantage">10年純効果 +¥0</div>
+          </div>
+        </div>
+
+        <!-- 3. 10年間トータル損益比較グラフ -->
+        <section class="card chart-card">
+          <div class="section-header-row">
+            <div>
+              <h2 class="section-title">10年間の累積コスト比較（放置 vs 補助金更新）</h2>
+              <p class="section-subtitle">現有機の電力ロス・保守費の累積額と、補助金活用時の実質初期負担を比較します。</p>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item"><i class="legend-swatch swatch-legacy"></i>現有設備を放置</span>
+              <span class="legend-item"><i class="legend-swatch swatch-upgrade"></i>補助金活用で更新</span>
+            </div>
+          </div>
+          <div class="svg-chart-wrapper">
+            <svg id="tco-svg-chart" viewBox="0 0 820 320" role="img" aria-label="10年間累積コスト比較グラフ"></svg>
+          </div>
+        </section>
+
+        <!-- 4. 損失計算・補助金内訳テーブル -->
+        <div class="detail-tables-grid">
+          <section class="card table-card">
+            <h3 class="subsection-title" id="spec-comparison-title">JIS変圧器損失・消費電力の比較内訳</h3>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>項目</th>
+                  <th>現有設備</th>
+                  <th>2026基準更新機</th>
+                </tr>
+              </thead>
+              <tbody id="spec-comparison-tbody"></tbody>
+            </table>
+            <p class="formula-note" id="formula-footnote"></p>
+          </section>
+
+          <section class="card table-card">
+            <h3 class="subsection-title">事業費・省エネ補助金・回収シミュレーション</h3>
+            <table class="data-table">
+              <tbody id="financial-breakdown-tbody"></tbody>
+            </table>
+            <p class="formula-note" id="subsidy-program-footnote"></p>
+          </section>
+        </div>
+
+        <!-- 5. 無料現地調査・補助金対応見積もり送客CTA -->
+        <section id="cta-section" class="card cta-card no-print" aria-label="無料現地調査・見積もり依頼">
+          <div class="cta-top-badges">
+            <span class="cta-tag">相談・現地調査無料</span>
+            <span id="cta-pr-badge" class="cta-tag-muted hidden">PR・提携専門業者ご案内</span>
+          </div>
+          <h2 id="cta-headline" class="cta-title">無料現地調査・補助金対応見積もり依頼</h2>
+          <p id="cta-subheadline" class="cta-desc"></p>
+          <p id="cta-urgency-box" class="cta-urgency-note"></p>
+          <ul id="cta-trust-list" class="cta-trust-list"></ul>
+          <div class="cta-button-group">
+            <a id="cta-primary-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              <span>無料現地調査・補助金対応見積もりを依頼する</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <button type="button" id="cta-secondary-print" class="btn btn-outline btn-lg">
+              社内稟議用PDF（A4）を保存する
+            </button>
+          </div>
+          <p class="cta-compliance-note" id="cta-compliance-note"></p>
+        </section>
+
+        <!-- 下部：静かな法定カウントダウン＆公的参照リンク（ファーストビューを邪魔せずDOM契約を100%維持） -->
+        <footer class="sim-footer">
+          <div class="footer-deadline-meta no-print">
+            2027年3月31日 低濃度PCB法定処理期限まで残り <strong id="pcb-days-remaining" class="mono">---</strong> 日（採油分析・委託契約目安 2026年10月末：<span id="pcb-lab-days-remaining" class="mono">---</span>）
+          </div>
+          <div class="ref-links-wrap no-print">
+            <span class="ref-links-label">参照公的機関：</span>
+            <div id="public-ref-links" class="ref-links-list"></div>
+          </div>
+          <p class="disclaimer-text">
+            ※本試算は環境省・経済産業省・厚生労働省の公開基準およびJIS C 4304 / JIS C 4306・業務用空調APF代表値に基づく概算です。実機のPCB含有判定は採油計量証明（0.5mg/kg基準）、石綿有無は有資格者調査、補助金額は各公募審査結果により確定します。
+          </p>
+        </footer>
+      </section>
+    </div>
+  </main>
+
+  <script src="./simulator.js"></script>
+</body>
+</html>

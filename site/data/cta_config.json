@@ -1,0 +1,62 @@
+{
+  "schema_version": "2026.1",
+  "active_mode": "partner_form",
+  "compliance": {
+    "tokushoho_required": false,
+    "operator_role": "無料技術試算ツールの提供および提携専門工事会社・公的相談窓口への送客（直接販売・決済なし）",
+    "show_pr_badge_in_affiliate_mode": true,
+    "pr_badge_text": "PR・提携専門業者ご案内"
+  },
+  "channels": {
+    "cubicle": {
+      "headline": "【2027年3月PCB期限・SII省エネ補助金対応】高圧受変電キュービクル 無料現地調査・更新見積もり依頼",
+      "subheadline": "第一種電気工事士・電気主任技術者ネットワークおよび環境省認定無害化処理ルート対応。採油PCB分析・2026年工作物石綿事前調査・SII補助金申請サポートまで一括対応可能です。",
+      "button_label": "診断結果を添付して無料現地調査・補助金対応見積もりを依頼する",
+      "secondary_button_label": "社内稟議用A4レポート（PDF）を出力して総務・役員へ共有",
+      "partner_form_url": "mailto:chaochenxuanhua@gmail.com",
+      "a8_affiliate_url": "https://px.a8.net/svt/ejp?a8mat=3Z9CUB+PCB2027+4XYZ+60WN6",
+      "rentracks_affiliate_url": "https://www.rentracks.jp/adx/r.html?idx=0.58391.320419.7812.11204",
+      "append_diagnostic_params": true,
+      "trust_points": [
+        "JEMA・環境省基準に基づく銘板確認＆絶縁油PCB微量分析（0.5mg/kg判定）手配対応",
+        "2026年1月義務化の「工作物石綿事前調査者」有資格者によるガスケット・盤内調査込み",
+        "2026年度第三次トップランナー変圧器（アモルファス選択可）＋SII省エネ補助金申請支援"
+      ],
+      "urgency_banner": "2026年秋以降は全国の採油分析機関およびJESCO/無害化処理施設の受入枠逼迫が予測されます。1994年以前製造の油入機器は早期の銘板・採油確認を推奨します。"
+    },
+    "hvac": {
+      "headline": "【R22フロン全廃・2026石綿調査・省エネ補助金対応】工場・倉庫・ビル用パッケージ空調 一括更新見積もり",
+      "subheadline": "最新R32超高効率インバータ空調への更新で年間空調電気代を最大35〜52%削減。配管フランジ・断熱材の石綿事前調査およびフロン回収行程管理票の発行までワンストップ対応。",
+      "button_label": "診断条件で業務用空調の省エネ補助金対応・無料現地見積もりを依頼する",
+      "secondary_button_label": "社内稟議用A4レポート（PDF）を出力して総務・役員へ共有",
+      "partner_form_url": "mailto:chaochenxuanhua@gmail.com",
+      "a8_affiliate_url": "https://px.a8.net/svt/ejp?a8mat=3Z9HVC+AIR2026+5ABC+61Z82",
+      "rentracks_affiliate_url": "https://www.rentracks.jp/adx/r.html?idx=0.58391.320420.8901.13420",
+      "append_diagnostic_params": true,
+      "trust_points": [
+        "R22旧冷媒機のフロン排出抑制法に基づく第一種フロン類充填回収業者による適法回収証明書発行",
+        "2026年1月義務化の配管フランジパッキン・ダクト保温材の石綿事前調査＆電子報告（GビズID）対応",
+        "経産省SII指定設備導入事業（1/3補助）および都道府県の中小企業脱炭素助成金の活用試算対応"
+      ],
+      "urgency_banner": "R22冷媒機はメーカー補修部品・再生冷媒ともに枯渇しており、夏季・冬季の突発停止時は納期数週間の操業停止リスクがあります。補助金公募期間中の計画更新が最も有利です。"
+    }
+  },
+  "public_reference_links": [
+    {
+      "title": "環境省 低濃度PCB廃棄物早期処理情報サイト（2027年3月31日期限）",
+      "url": "https://pcb-soukishori.env.go.jp/"
+    },
+    {
+      "title": "日本電機工業会（JEMA）PCBを含む電気機器への対応情報",
+      "url": "https://www.jema-net.or.jp/Japanese/pis/pcb/"
+    },
+    {
+      "title": "厚生労働省 石綿総合情報ポータルサイト（2026年1月工作物事前調査義務化）",
+      "url": "https://www.ishiwata.mhlw.go.jp/"
+    },
+    {
+      "title": "資源エネルギー庁 変圧器の新しい省エネ基準（2026年度第三次トップランナー基準）",
+      "url": "https://www.enecho.meti.go.jp/category/saving_and_new/saving/enterprise/equipment/"
+    }
+  ]
+}
